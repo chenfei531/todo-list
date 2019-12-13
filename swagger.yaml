@@ -1,0 +1,133 @@
+#TODO
+openapi: 3.0.0
+info:
+  title: Todo List
+  description: |
+    Todo list server
+  contact:
+    email: jchenfei@fortinet.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description:
+  url:
+servers:
+- url: https://virtserver.com/todolist/1.0.0
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: item
+  description: list item
+  externalDocs:
+    description: Find out more
+    url:
+- name: user
+  description: Operations about user
+  externalDocs:
+    description: Find out more about our store
+    url:
+paths:
+  /user:
+    post:
+      tags:
+      - user
+      summary: Create user
+      description: register new user
+      operationId: create_user
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '200':
+          description: Success
+        default:
+          description: Fail
+      x-openapi-router-controller: swagger_server.controllers.user_controller
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        password:
+          type: string
+      example:
+        id: 0
+        username: username
+        password: password
+    Item:
+      type: object
+      properties:
+        id:
+          type: interger
+          format: int64
+        title:
+          type: string
+        context:
+          type: string
+      example:
+        id: 0
+        title: title
+        context: context
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
+  requestBodies:
+    User:
+      description: User
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+      required: true
+    ItemList:
+        description: Items to be added
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Item'
+        required: true
+
+  responses:
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+
+  # 1) Define the security scheme type (HTTP bearer)
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+#security:
+#  - bearerAuth: []

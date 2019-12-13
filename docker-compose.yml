@@ -1,0 +1,11 @@
+#TOOO:
+#app-server and db better be deployed in different containers
+version: '3.7'
+services:
+    todo-list:
+        build: .
+        ports:
+            - "5000:5000"
+        volumes:
+            - "./db:/db"
+        image: todo-list

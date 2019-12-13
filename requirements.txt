@@ -1,0 +1,10 @@
+#Base
+Flask
+
+#SQLAlchemy
+Flask-SQLAlchemy
+flask-restless
+flask-bcrypt
+
+#Auth
+pyjwt
