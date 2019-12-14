@@ -8,3 +8,6 @@ flask-bcrypt
 
 #Auth
 pyjwt
+
+#DB
+psycopg2

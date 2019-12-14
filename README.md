@@ -14,8 +14,8 @@ Possible improvements in the future:
 
 #Modification form Alpha
 how to build:
-    docker-compose build
+    docker build -t todo-list:latest .
 how to run:
-    docker-compose run
+    docker-compose up
 how to test:
     import postman test cases in test folder, remember setting the token in header

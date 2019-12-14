@@ -3,9 +3,38 @@
 version: '3.7'
 services:
     todo-list:
-        build: .
+        #build: .
+        image: todo-list:latest
+        container_name: todo-server
         ports:
             - "5000:5000"
+        networks:
+            - frontend
+            - backend
+        deploy:
+            replicas: 1
+    database:
+        image: postgres:9.4
         volumes:
-            - "./db:/db"
-        image: todo-list
+            - db-data:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        env_file:
+            - "./db/env"
+        #environment:
+            #- POSTGRES_USER=user
+            #- POSTGRES_PASSWORD=password
+            #- POSTGRES_DB=todo-list
+        networks:
+            - backend
+        restart: always
+
+networks:
+    frontend:
+        driver: overlay
+        attachable: true
+
+    backend:
+        driver: overlay
+volumes:
+    db-data:
