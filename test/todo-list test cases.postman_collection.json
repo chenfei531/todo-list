@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "localhost:5000/auth/register",
+			"name": "register",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -32,11 +32,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/auth/register",
+					"raw": "localhost:80/auth/register",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"auth",
 						"register"
@@ -47,7 +47,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/auth/login",
+			"name": "login",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -74,11 +74,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/auth/login",
+					"raw": "localhost:80/auth/login",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"auth",
 						"login"
@@ -89,22 +89,22 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/auth/logout",
+			"name": "logout",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUwMTY2MzcsImlhdCI6MTU3NTAxNjAzNywic3ViIjoiMTIzIn0.JGfXLtw8o8xk8giWM8TXc9h3MTP9wvovGnR6WU7uIf4",
-						"type": "text"
+						"type": "text",
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUwMTY2MzcsImlhdCI6MTU3NTAxNjAzNywic3ViIjoiMTIzIn0.JGfXLtw8o8xk8giWM8TXc9h3MTP9wvovGnR6WU7uIf4"
 					}
 				],
 				"url": {
-					"raw": "localhost:5000/auth/logout",
+					"raw": "localhost:80/auth/logout",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"auth",
 						"logout"
@@ -114,7 +114,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/items",
+			"name": "query item",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -123,7 +123,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYyMjg1ODMsImlhdCI6MTU3NjIyNzk4Mywic3ViIjoiMSJ9.FbJ0RKvb8Q6eh_q1hBy-9gQKgnBIS_1b0mQYoAaDa0g",
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYzMTI2NDksImlhdCI6MTU3NjMxMjA0OSwic3ViIjoiMSJ9.taOeWnzXIGv19NHcI3HUKL3zbgXAJQCEI1w-QbDmOXw",
 						"type": "text"
 					},
 					{
@@ -143,11 +143,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/items",
+					"raw": "localhost:80/items",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"items"
 					]
@@ -157,20 +157,20 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/items",
+			"name": "add item",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYyMjg1ODMsImlhdCI6MTU3NjIyNzk4Mywic3ViIjoiMSJ9.FbJ0RKvb8Q6eh_q1hBy-9gQKgnBIS_1b0mQYoAaDa0g",
-						"type": "text"
+						"type": "text",
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYyMjg1ODMsImlhdCI6MTU3NjIyNzk4Mywic3ViIjoiMSJ9.FbJ0RKvb8Q6eh_q1hBy-9gQKgnBIS_1b0mQYoAaDa0g"
 					},
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -183,11 +183,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/items",
+					"raw": "localhost:80/items",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"items"
 					]
@@ -197,20 +197,20 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/items",
+			"name": "delete item",
 			"request": {
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYyMjg1ODMsImlhdCI6MTU3NjIyNzk4Mywic3ViIjoiMSJ9.FbJ0RKvb8Q6eh_q1hBy-9gQKgnBIS_1b0mQYoAaDa0g",
-						"type": "text"
+						"type": "text",
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYyMjg1ODMsImlhdCI6MTU3NjIyNzk4Mywic3ViIjoiMSJ9.FbJ0RKvb8Q6eh_q1hBy-9gQKgnBIS_1b0mQYoAaDa0g"
 					},
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -223,11 +223,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/items",
+					"raw": "localhost:80/items",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"items"
 					]
@@ -237,7 +237,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:5000/items",
+			"name": "update items",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -263,11 +263,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/items",
+					"raw": "localhost:80/items",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "80",
 					"path": [
 						"items"
 					]
