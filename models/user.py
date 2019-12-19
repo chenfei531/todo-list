@@ -5,12 +5,12 @@ from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
 
-from extensions import db_sqlite
+from extensions import sqlalchemy
 from extensions import bcrypt
 
 BASE = declarative_base()
 
-class User(db_sqlite.db.Model, BASE): # pylint: disable=too-few-public-methods
+class User(sqlalchemy.db.Model, BASE): # pylint: disable=too-few-public-methods
     """user model"""
     id = Column(Integer, primary_key=True)
     username = Column(String(64))

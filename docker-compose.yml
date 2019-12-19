@@ -1,5 +1,3 @@
-#TOOO:
-#app-server and db better be deployed in different containers
 version: '3.7'
 services:
     #web server

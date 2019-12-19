@@ -3,7 +3,7 @@
 from flask import request
 from flask.views import MethodView
 
-from extensions import db_sqlite
+from extensions import sqlalchemy
 from models import user
 from auth import auth_util
 
@@ -25,8 +25,8 @@ class RegisterAPI(MethodView): # pylint: disable=too-few-public-methods
             return auth_util.make_json_response('fail', 'invalid password')
 
         new_user = user.User(username=username_str, password=password_str)
-        db_sqlite.db.session.add(new_user)
-        db_sqlite.db.session.commit()
+        sqlalchemy.db.session.add(new_user)
+        sqlalchemy.db.session.commit()
         return auth_util.make_json_response('success',
                                             'user added, username: ' +
                                             username_str)
