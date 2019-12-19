@@ -43,7 +43,7 @@ import json file under test dir to postman, modify headers and bodies to test.
 * using ssl
 
 
-References
+## References
 [Microsoft REST guides](https://docs.microsoft.com/en-us/azure/architecture/guide/)  
 [How to run flask on docker swarm](https://testdriven.io/blog/running-flask-on-docker-swarm/)  
 [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)  
