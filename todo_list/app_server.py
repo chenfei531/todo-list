@@ -3,7 +3,7 @@ import os
 
 from flask import Flask
 #extentions
-from extensions import sqlalchemy
+from extensions import sqlalchemy_db
 from extensions import bcrypt
 #blueprints
 from admin import admin_blueprint
@@ -22,7 +22,7 @@ def blueprints_fabrics(app, blueprints):
 
 def extensions_fabrics(app):
     """init extensions"""
-    sqlalchemy.db.init_app(app)
+    sqlalchemy_db.db.init_app(app)
     bcrypt.bcrypt.init_app(app)
     #extensions.manager.init_app(app, falsk_sqlalchemy_db=db)
 

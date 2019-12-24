@@ -6,10 +6,10 @@ from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy import ForeignKey
 
-from extensions import sqlalchemy
+from extensions import sqlalchemy_db
 
 BASE = declarative_base()
-DB = sqlalchemy.db
+DB = sqlalchemy_db.db
 
 class Item(DB.Model, BASE): # pylint: disable=too-few-public-methods
     """todo-list item model class"""

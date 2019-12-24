@@ -4,7 +4,7 @@ add item api
 from flask.views import MethodView
 from flask import request
 
-from extensions import sqlalchemy
+from extensions import sqlalchemy_db
 
 from models import list_item
 from auth import auth_util
@@ -43,8 +43,8 @@ class ItemAPI(MethodView):
         new_item = list_item.Item(title=title_str,
                                   context=context_str,
                                   owner_id=id_int)
-        sqlalchemy.db.session.add(new_item)
-        sqlalchemy.db.session.commit()
+        sqlalchemy_db.db.session.add(new_item)
+        sqlalchemy_db.db.session.commit()
         return auth_util.make_json_response('sucess', str(new_item) + ' added')
 
     def delete(self):
@@ -61,8 +61,8 @@ class ItemAPI(MethodView):
                                              owner_id=id_int).first()
         if not ele:
             return auth_util.make_json_response('fail', 'title not exists')
-        sqlalchemy.db.session.delete(ele)
-        sqlalchemy.db.session.commit()
+        sqlalchemy_db.db.session.delete(ele)
+        sqlalchemy_db.db.session.commit()
         return auth_util.make_json_response('sucess', repr(ele) + 'deleted')
 
     def put(self):
@@ -85,6 +85,6 @@ class ItemAPI(MethodView):
             #when title not exists, add item
             ele = list_item.Item(title=title_str,
                                  context=context_str, owner_id=id_int)
-            sqlalchemy.db.session.add(ele)
-        sqlalchemy.db.session.commit()
+            sqlalchemy_db.db.session.add(ele)
+        sqlalchemy_db.db.session.commit()
         return auth_util.make_json_response('sucess', str(ele) + ' updated')
