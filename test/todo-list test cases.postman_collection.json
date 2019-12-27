@@ -114,7 +114,7 @@
 			"response": []
 		},
 		{
-			"name": "query item",
+			"name": "query item by item id",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -123,14 +123,14 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYzMTI2NDksImlhdCI6MTU3NjMxMjA0OSwic3ViIjoiMSJ9.taOeWnzXIGv19NHcI3HUKL3zbgXAJQCEI1w-QbDmOXw",
-						"type": "text"
+						"type": "text",
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Nzc0MTI5MjQsImlhdCI6MTU3NzQxMjMyNCwic3ViIjoiMSJ9.48Gkb0fE7GLm9UgkfZ3T3Xf482OAXyr2P8XIy_GEPNc"
 					},
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -143,13 +143,62 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:80/items",
+					"raw": "localhost:80/user/1/items/1",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
-						"items"
+						"user",
+						"1",
+						"items",
+						"1"
+					]
+				},
+				"description": "query test"
+			},
+			"response": []
+		},
+		{
+			"name": "query item by user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Nzc0MTI5MjQsImlhdCI6MTU3NzQxMjMyNCwic3ViIjoiMSJ9.48Gkb0fE7GLm9UgkfZ3T3Xf482OAXyr2P8XIy_GEPNc"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/user/1/items/",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"user",
+						"1",
+						"items",
+						""
 					]
 				},
 				"description": "query test"
@@ -164,7 +213,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYyMjg1ODMsImlhdCI6MTU3NjIyNzk4Mywic3ViIjoiMSJ9.FbJ0RKvb8Q6eh_q1hBy-9gQKgnBIS_1b0mQYoAaDa0g"
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzYzMTUxMjUsImlhdCI6MTU3NjMxNDUyNSwic3ViIjoiMSJ9.3tjFqd1a_W1meCbVV3HONTYs0z25Tv-sVUvpkfI1Ki8"
 					},
 					{
 						"key": "Content-Type",
@@ -183,13 +232,16 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:80/items",
+					"raw": "localhost:80/user/1/items/",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
-						"items"
+						"user",
+						"1",
+						"items",
+						""
 					]
 				},
 				"description": "add item"
@@ -215,7 +267,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"XYZ\",\n    \"context\": \"123\"\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -223,13 +275,16 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:80/items",
+					"raw": "localhost:80/user/1/items/10",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
-						"items"
+						"user",
+						"1",
+						"items",
+						"10"
 					]
 				},
 				"description": "delete items\n"
@@ -255,7 +310,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"XYZ\",\n    \"context\": \"123\"\n}",
+					"raw": "{\n    \"title\": \"2\",\n    \"context\": \"2\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -263,13 +318,16 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:80/items",
+					"raw": "localhost:80/user/1/items/2",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
-						"items"
+						"user",
+						"1",
+						"items",
+						"2"
 					]
 				},
 				"description": "update (add if not exist)"
