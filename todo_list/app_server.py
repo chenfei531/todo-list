@@ -5,10 +5,12 @@ from flask import Flask
 #extentions
 from extensions import sqlalchemy_db
 from extensions import bcrypt
+from extensions import jwt
 #blueprints
 from admin import admin_blueprint
 from api import api_blueprint
 from auth import auth_blueprint
+from auth import auth_util
 
 BLUEPRINTS = (admin_blueprint.ADMIN_BLUEPRINT,
               auth_blueprint.AUTH_BLUEPRINT,
@@ -24,7 +26,7 @@ def extensions_fabrics(app):
     """init extensions"""
     sqlalchemy_db.db.init_app(app)
     bcrypt.bcrypt.init_app(app)
-    #extensions.manager.init_app(app, falsk_sqlalchemy_db=db)
+    jwt.jwt.init_app(app)
 
 def create_app(config=None, app_name="todo-list", blueprints=None):
     """
@@ -48,5 +50,7 @@ def create_app(config=None, app_name="todo-list", blueprints=None):
 
     blueprints_fabrics(app, blueprints)
     extensions_fabrics(app)
+
+    auth_util.init_auth_callbacks()
 
     return app

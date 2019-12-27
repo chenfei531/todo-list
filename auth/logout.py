@@ -13,9 +13,7 @@ class LogoutAPI(MethodView): # pylint: disable=too-few-public-methods
     """
     def post(self): # pylint: disable=no-self-use
         """post callback"""
-        ret = auth_util.auth_check(request)
-        if isinstance(ret, str):
-            return auth_util.make_json_response('fail', ret)
+        #TODO: blacklist logout user
 
         return auth_util.make_json_response('sucess',
-                                            ret['sub'] + ' logged out')
+                                            ret['sub'] + ' logged out', 200)

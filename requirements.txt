@@ -1,13 +1,12 @@
 #Base
-Flask
+#Flask
 
-#SQLAlchemy
 Flask-SQLAlchemy
 flask-restless
 flask-bcrypt
-
+flask-jwt-extended
 #Auth
-pyjwt
+#pyjwt
 
 #DB
 psycopg2
