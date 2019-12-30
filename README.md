@@ -31,17 +31,15 @@ import json file under test dir to postman, modify headers and bodies to test.
 * user logout(not complete)
 * todo-list modification(one element each request)
 ## TODO
-* specify correct http return code (currently not specified)
+* improve logging
+* add unit test
+* implement logout
+* using ssl
 * add manager.py to maintain the services instead of endpoints that anyone can access
 * CRUD of multiple items can be operated within one API call
 * modify swagger.yaml file to generate API Docs
-* improve logging
 * API version control
-* add unit test
-* cache supports
 * pagination
-* using ssl
-
 
 ## References
 [Microsoft REST guides](https://docs.microsoft.com/en-us/azure/architecture/guide/)  
