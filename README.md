@@ -12,7 +12,9 @@ A simple todo-list web application server.
 * run build command:
     >     docker build -t todo-list:latest .
 ## How to run
-if you have only one docker node, run following command to start/stop services on your node with _deploy_ key being ignored:
+init a swarm
+>     docker swarm init
+if you have only one docker node in the swarm, run following command to start/stop services on your node with _deploy_ key being ignored:
 >     #start service
 >     docker-compose up
 >     #stop service
@@ -28,13 +30,11 @@ import json file under test dir to postman, modify headers and bodies to test.
 ## Features
 * user register
 * user login
-* user logout(not complete)
+* user logout
 * todo-list modification(one element each request)
 ## TODO
 * improve logging
 * add unit test
-* implement logout
-* using ssl
 * add manager.py to maintain the services instead of endpoints that anyone can access
 * CRUD of multiple items can be operated within one API call
 * modify swagger.yaml file to generate API Docs
