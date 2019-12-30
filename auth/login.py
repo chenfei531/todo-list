@@ -4,7 +4,9 @@ from flask import request
 from flask import jsonify
 from flask import make_response
 
+from flask_jwt_extended import get_jti
 from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_refresh_token
 
 from extensions import bcrypt
 
@@ -31,6 +33,17 @@ class LoginAPI(MethodView): # pylint: disable=too-few-public-methods
                                                     403)
             #generate token
             access_token = create_access_token(identity=guest.id)
-            return jsonify(access_token=access_token), 200
+            #refresh_token = create_refresh_token(identity=guest.id)
+
+            access_jti = get_jti(encoded_token=access_token)
+            #refresh_jti = get_jti(encoded_token=refresh_token)
+            auth_util.revoked_store.set(access_jti, 'false', auth_util.ACCESS_EXPIRES * 1.2)
+            #auth_util.revoked_store.set(refresh_jti, 'false', REFRESH_EXPIRES * 1.2)
+
+            ret = {
+                'access_token': access_token,
+                #'refresh_token': refresh_token
+            }
+            return jsonify(ret), 201
         except Exception as e:
             return auth_util.make_json_response('fail', str(e), 500)

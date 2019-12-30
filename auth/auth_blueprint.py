@@ -26,5 +26,5 @@ LOGOUT_VIEW = logout.LogoutAPI.as_view('logout_api')
 AUTH_BLUEPRINT.add_url_rule(
     'logout',
     view_func=LOGOUT_VIEW,
-    methods=['GET']
+    methods=['DELETE']
 )

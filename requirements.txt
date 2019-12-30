@@ -10,3 +10,4 @@ flask-jwt-extended
 
 #DB
 psycopg2
+redis

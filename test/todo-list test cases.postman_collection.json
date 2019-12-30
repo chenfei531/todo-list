@@ -66,7 +66,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\" : \"123\",\n\t\"password\" : \"123\"\n}",
+					"raw": "{\n    \"username\": \"123\",\n    \"password\": \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -91,12 +91,12 @@
 		{
 			"name": "logout",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUwMTY2MzcsImlhdCI6MTU3NTAxNjAzNywic3ViIjoiMTIzIn0.JGfXLtw8o8xk8giWM8TXc9h3MTP9wvovGnR6WU7uIf4"
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Nzc2ODQzODgsIm5iZiI6MTU3NzY4NDM4OCwianRpIjoiMzM1YzdjMDctZDg1MS00NjVmLTk1MTEtZTFiNjlkMzIwYWM2IiwiZXhwIjoxNTc3Njg0OTg4LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsidXNlcl9pZCI6MX19.gW02IZ1F81lXaMwSI4g-lh-zBVUB45EQfkjrblNoSig"
 					}
 				],
 				"url": {
@@ -124,7 +124,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Nzc0MTI5MjQsImlhdCI6MTU3NzQxMjMyNCwic3ViIjoiMSJ9.48Gkb0fE7GLm9UgkfZ3T3Xf482OAXyr2P8XIy_GEPNc"
+						"value": "token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Nzc2ODQzODgsIm5iZiI6MTU3NzY4NDM4OCwianRpIjoiMzM1YzdjMDctZDg1MS00NjVmLTk1MTEtZTFiNjlkMzIwYWM2IiwiZXhwIjoxNTc3Njg0OTg4LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsidXNlcl9pZCI6MX19.gW02IZ1F81lXaMwSI4g-lh-zBVUB45EQfkjrblNoSig"
 					},
 					{
 						"key": "Content-Type",
